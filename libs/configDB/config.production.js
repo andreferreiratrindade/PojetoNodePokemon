@@ -1,7 +1,7 @@
 module.exports = {
 
     username: "desafioAdmin",
-    password: "Picachu123",
+    password: "XXXXXX",
     database: "desafio-jz",
     host: "jzd-dev-desafio.database.windows.net",
     dialect: "mssql",
