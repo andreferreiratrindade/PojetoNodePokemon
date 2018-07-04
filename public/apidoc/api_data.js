@@ -1,0 +1,335 @@
+define({ "api": [
+  {
+    "type": "post",
+    "url": "/batalhar/:pokemonAId/:pokemonBId",
+    "title": "Executa batalha",
+    "group": "Batalha",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "pokemonAId",
+            "description": "<p>Id do pokemonA; Campo obrigatório</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "pokemonBId",
+            "description": "<p>Id do pokemonB; Campo obrigatório</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Entrada",
+          "content": "/batalhar/1/2",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "vencedor",
+            "description": "<p>pokemon vencedor; subiu de nível</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "perdedor",
+            "description": "<p>pokemon vencedor; caiu de nível</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Sucesso",
+          "content": "200 OK\n {  vencedor:{\n      id: 1, tipo: \"tipo\", treinador:\"treinador\", nivel:2 // Subiu de nível\n    },\n    perdedor: {\n     id: 1, tipo: \"tipo\", treinador:\"treinador\", nivel:0 // Será eliminado do banco de dados, pois nível é igual à zero.\n    }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/routes/batalhaRoute.js",
+    "groupTitle": "Batalha",
+    "name": "PostBatalharPokemonaidPokemonbid"
+  },
+  {
+    "type": "delete",
+    "url": "/pokemons/id",
+    "title": "Deletar pokemon",
+    "group": "Pokemons",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>id do pokemon a ser deletado</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Entrada",
+          "content": "/pokemons/1",
+          "type": "Number"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Sucesso",
+          "content": "204 No_Content",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/routes/pokemonRoute.js",
+    "groupTitle": "Pokemons",
+    "name": "DeletePokemonsId"
+  },
+  {
+    "type": "get",
+    "url": "/pokemons",
+    "title": "Listar pokemons",
+    "group": "Pokemons",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "pokemons",
+            "description": "<p>Lista de pokemons</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Sucesso",
+          "content": "200 OK\n[{  id: 1,  tipo: \"pikachu\", treinador: \"Thiago\", nivel: 1  }\n, { id: 2, tipo: \"charizard\",treinador: \"Renato\", nivel: 1  }]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/routes/pokemonRoute.js",
+    "groupTitle": "Pokemons",
+    "name": "GetPokemons"
+  },
+  {
+    "type": "get",
+    "url": "/pokemons/id",
+    "title": "Carregar pokemon",
+    "group": "Pokemons",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>id do pokemon a ser carregado; Campo obrigatório</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Entrada",
+          "content": "/pokemons/InserirAqui",
+          "type": "Number"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>id do pokemon recuperado</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "tipo",
+            "description": "<p>tipo do pokemon recuperado</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "treinador",
+            "description": "<p>Treinador do pokemon recuperado</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "nivel",
+            "description": "<p>nível do pokemon recuperado</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Sucesso",
+          "content": "200 OK \n{    id: 1,    tipo: \"pikachu\", treinador: \"Thiago\",    nivel: 1  }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/routes/pokemonRoute.js",
+    "groupTitle": "Pokemons",
+    "name": "GetPokemonsId"
+  },
+  {
+    "type": "post",
+    "url": "/pokemons",
+    "title": "Criar pokemon",
+    "group": "Pokemons",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String(50)",
+            "optional": false,
+            "field": "tipo",
+            "description": "<p>Tipo do pokemon; Campo obrigatório; Tipos aceitos: &quot;charizard&quot;, &quot;mewtwo&quot; ou &quot;pikachu&quot;; máximo 50 caracteres</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String(50)",
+            "optional": false,
+            "field": "treinador",
+            "description": "<p>Treinador do pokemon; Campo obrigatório; máximo 50 caracteres; Tipos aceitos: &quot;charizard&quot;, &quot;mewtwo&quot; ou &quot;pikachu&quot;</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Entrada",
+          "content": "{ \"tipo\": \"tipo\",\"treinador\":\"treinador\" }",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>id do pokemon criado</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "tipo",
+            "description": "<p>tipo do pokemon</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "treinador",
+            "description": "<p>treinador do pokemon</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "nivel",
+            "description": "<p>nível do pokemon</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Sucesso",
+          "content": "200 OK\n {id: 1 , tipo: \"tipo\", treinador:\"treinador\", nivel:1 }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/routes/pokemonRoute.js",
+    "groupTitle": "Pokemons",
+    "name": "PostPokemons"
+  },
+  {
+    "type": "put",
+    "url": "/pokemons/id",
+    "title": "Alterar pokemon",
+    "group": "Pokemons",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Id do pokemon que será alterado; Inserir Id na url; Campo obrigatório</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "treinador",
+            "description": "<p>Treinador do pokemon; Campo obrigatório</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Entrada-Url",
+          "content": "/pokemons/1",
+          "type": "Number"
+        },
+        {
+          "title": "Entrada-Json",
+          "content": "{ treinador\":\"treinador\" }",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Sucesso",
+          "content": "204 No_Content",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/routes/pokemonRoute.js",
+    "groupTitle": "Pokemons",
+    "name": "PutPokemonsId"
+  }
+] });

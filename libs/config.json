@@ -1,0 +1,30 @@
+{
+    "development": {
+      "username": "desafioAdmin",
+      "password": "Picachu123",
+      "database": "desafio-jz",
+      "host": "jzd-dev-desafio.database.windows.net",
+      "dialect": "mssql",
+      "encrypt":true,
+      "schema":"ANDRE"
+    },
+    "test": {
+      "username": "desafioAdmin",
+      "password": "Picachu123",
+      "database": "desafio-jz",
+      "host": "jzd-dev-desafio.database.windows.net",
+      "dialect": "mssql",
+      "encrypt":false,
+      "schema":"ANDRE"
+      
+    },
+    "production": {
+      "username": "desafioAdmin",
+      "password": "Picachu123",
+      "database": "desafio-jz",
+      "host": "jzd-dev-desafio.database.windows.net",
+      "dialect": "mssql",
+      "encrypt":false,
+      "schema":"ANDRE"
+    }
+  }
