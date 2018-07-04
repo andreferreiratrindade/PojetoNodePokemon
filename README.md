@@ -2,14 +2,29 @@
 Projeto realizado em node js 
 
 # CRUD de pokemon 
-
-# Executar testes
-  $npm run test
-  ou 
-  $npm run test-unit
-  ou 
-  $npm run test-integration
+    POST /pokemons
+  
+    PUT /pokemons/:id
+    
+    DELETE /pokemons/:id
+  
+    GET /pokemons/:id
+  
+    GET /pokemons
+# Batalha
+    POST /batalhar/:pokemonAId/:pokemonBId
+  
+# Documentação automática - ApiDoc
+  Ao iniciar projeto, será disponivel na página localhost:3000/apidoc, documentação referente ao projeto.
+##  Executar testes
+  # Testes unitários 
+    $npm run test-unit
+  # Testes integração 
+    $npm run test-integration
 
 # Executar projeto
-  $npm run start
 
+    $ npm install
+  
+    $npm run start
+  
