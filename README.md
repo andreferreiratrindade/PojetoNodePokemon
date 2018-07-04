@@ -1,5 +1,5 @@
 # PojetoNodePokemon
-Projeto realizado em node js 
+Projeto realizado em node js; express; sequelize 
 # Métodos implementados
 
 ## CRUD de pokemon 
