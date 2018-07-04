@@ -1,8 +1,8 @@
 {
   "name": "Pokemon_BackEnd",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Projeto CRUD com Pokemons",
+  "main": "server.js",
   "scripts": {
     "start": "npm run apidoc && node ./server.js",
     "test": "npm run test-unit && npm run test-integration",
@@ -11,8 +11,11 @@
     "apidoc": "apidoc -i src/routes -o public/apidoc"
   },
   "keywords": [],
-  "author": "",
+  "author": "André F. Trindade",
   "license": "ISC",
+  "engines": {
+    "node": "8.11.3"
+  },
   "dependencies": {
     "body-parser": "^1.18.3",
     "compression": "^1.7.2",

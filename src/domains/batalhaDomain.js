@@ -1,6 +1,6 @@
 const BatalhaValidator = require('../validators/batalhaValidator');
-const PokemonBatalhaPoco = require('../pocos/pokemonBatalha-poco')
-const BatalhaPoco = require('../pocos/batalha-poco')
+const PokemonBatalhaPoco = require('../pocos/pokemonBatalha-poco');;
+const BatalhaPoco = require('../pocos/batalha-poco');
 const ReturnMessage = require("../lib/returnMessage");
 
 // Possibilidade do pokemon com nivel maior de ganhar.
