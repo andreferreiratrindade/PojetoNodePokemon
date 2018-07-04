@@ -2,7 +2,7 @@ const bodyParser = require('body-parser');
 const compression = require('compression');
 const express = require('express');
 module.exports = app => {
-    app.set("port", process.env.port || 3000);
+    app.set("port", process.env.PORT || 3000);
 
     app.use(bodyParser.json({
         limit: '5mb'
