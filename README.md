@@ -1,7 +1,8 @@
 # PojetoNodePokemon
 Projeto realizado em node js 
+# Métodos implementados
 
-# CRUD de pokemon 
+## CRUD de pokemon 
     POST /pokemons
   
     PUT /pokemons/:id
@@ -11,15 +12,15 @@ Projeto realizado em node js
     GET /pokemons/:id
   
     GET /pokemons
-# Batalha
+## Batalha
     POST /batalhar/:pokemonAId/:pokemonBId
   
 # Documentação automática - ApiDoc
   Ao iniciar projeto, será disponivel na página localhost:3000/apidoc, documentação referente ao projeto.
-##  Executar testes
-  # Testes unitários 
+#  Executar testes
+  ## Testes unitários 
     $npm run test-unit
-  # Testes integração 
+  ## Testes integração 
     $npm run test-integration
 
 # Executar projeto
