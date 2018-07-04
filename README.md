@@ -15,14 +15,22 @@ Projeto realizado em node js; express; sequelize
 ## Batalha
     POST /batalhar/:pokemonAId/:pokemonBId
   
-# Documentação automática - ApiDoc
-  Ao iniciar projeto, será disponivel na página localhost:3000/apidoc, documentação referente ao projeto.
+
+    
+# Heroku
+    https://limitless-ravine-87779.herokuapp.com/pokemons
+
 #  Executar testes
   ## Testes unitários 
     $npm run test-unit
   ## Testes integração 
     $npm run test-integration
-
+    
+# Documentação automática - ApiDoc
+  Ao iniciar projeto, será disponivel na página localhost:3000/apidoc, documentação referente ao projeto.
+  
+    https://limitless-ravine-87779.herokuapp.com/apidoc
+    
 # Executar projeto
 
     $ npm install
