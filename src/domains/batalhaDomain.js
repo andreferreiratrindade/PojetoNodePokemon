@@ -32,13 +32,7 @@ module.exports = (app, numAleatorio) => {
         } else {
 
             let pokemonsLst = await this.recuperaPokemonsParaBatalha(obj.pokemonAId, obj.pokemonBId);
-
-          // if (pokemonsLst.length < 2) {
-          //     let pokemonsNaoEncontrados = pokemonsLst.filter(x => { return x !== obj.pokemonAId || x !== obj.pokemonBId });
-          //     retorno.adicionaDados(false, `Pokemon não encontrado: Id - ${pokemonsNaoEncontrados.map(x=>x.id).join()}` );
-          //     return retorno;
-          // }
-            
+           
             let batalhaComPokemons = this.preparaPokemonsParaBatalha(pokemonsLst);;
 
             batalhaComPokemons = this.executaBatalha(batalhaComPokemons);
